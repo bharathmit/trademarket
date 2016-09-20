@@ -1,0 +1,17 @@
+<div class="page-header">
+	<h3>Add and Edit</h3>
+	<div class="pull-right">
+	<a  ng-click="pageRedirect()" class="btn btn-default" title="Create"><span class="glyphicon glyphicon-plus"></span></a>
+	</div>	
+</div>
+
+
+<div ng-repeat="data in country">
+	<hr />
+	<div class="pull-right">
+		<a href="" ng-click="deleteEntry(data.codeId)" class="btn btn-xs btn-default"  title="delete"><span class="glyphicon glyphicon-trash"></span></a>
+		<a href="" ng-click="editEntry(data.codeId)" class="btn btn-xs btn-default"  title="edit"><span class="glyphicon glyphicon-pencil"></span></a>
+	</div>
+	<h4>{{data.clAlternate}}</h4>
+	
+</div>

@@ -1,0 +1,12 @@
+<html>
+
+<head>
+<body>
+<div >
+<h2><p style="margin-left:400px;margin-top:142px;">$name</p></h2>
+<h4><p style="margin-left:400px;margin-top:26px;align:center;">$org</p></h4>
+<h4><p style="margin-left:400px;margin-top:-15px;">$country</p><h4>
+</div>
+
+</body>
+</html>

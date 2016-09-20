@@ -1,0 +1,88 @@
+<link rel="stylesheet" type="text/css" href="resources/boot/css/nv.d3.css" />
+<script src="resources/angular/d3.js"></script>
+<script src="resources/angular/nv.d3.js"></script>
+
+
+<script>
+  $(function() {
+    $( "#dfromdate" ).datepicker({
+    	changeMonth: true,
+        changeYear: true,
+    	dateFormat: "dd-mm-yy" 
+    	});
+    $( "#dtodate" ).datepicker({ 
+    	changeMonth: true,
+        changeYear: true,
+    	dateFormat: "dd-mm-yy"
+    });
+  });
+  
+ </script>
+  
+<div class="page-header">
+	<h3>DashBoard</h3>
+</div>
+
+
+<form class="form-horizontal">
+			
+			
+				
+					<div class="form-group" >
+						<label for="fromdate" class="col-sm-3 control-label">From Date:</label>
+						<div class="col-sm-3">
+							<input id="dfromdate" ng-model="report.fromDate" type="text" class="form-control" ng-required="true"/>
+						</div>
+					</div>
+					
+					<div class="form-group" >
+						<label for="todate" class="col-sm-3 control-label">To Date:</label>
+						<div class="col-sm-3">
+							<input id="dtodate" ng-model="report.toDate" type="text" class="form-control" ng-required="true" />
+						</div>
+					</div>
+					
+					<div class="form-group" >
+						<div class="col-sm-10 col-sm-offset-3">
+								<button type="submit" class="btn btn-primary" ng-click="getChartData(report)"><span class="glyphicon glyphicon-ok"></span> Search</button>
+						</div>
+					</div>
+				
+				<div class="form-group" ng-show="pieChart">
+					<label ng-click="chartType='pie'"  class="col-sm-3 control-label">Pie Chart</label>
+					<label ng-click="chartType='bar'"  class="col-sm-3 control-label">Bar Chart</label>
+				</div>
+					
+					
+				<div id="pie" ng-show="chartType=='pie'">
+					<nvd3-pie-chart  id="pie" data="pieChart"
+						x="xFunction()" y="yFunction()" width="550" height="350"
+						pieLabelsOutside="true" showLabels="true"
+						showValues="true" labelType="percent"
+						tooltips="true" showLegend="true"> 
+						<svg></svg>
+					</nvd3-pie-chart>
+				</div>
+			
+				<div id="bar" ng-show="chartType=='bar'">
+					<nvd3-discrete-bar-chart id="bar" data="barChart"
+				        showXAxis="true"
+				        showYAxis="true"
+				        showValues="true"
+				        reduceXTicks="true"
+				        xAxisTickFormat="xAxisTickFormatFunction()"
+				      	tooltips="true"
+				        width="550" height="350">
+				       	<svg></svg>
+				    </nvd3-discrete-bar-chart>
+				</div>
+			
+		    
+			    
+				
+			
+				
+			
+			
+</form>
+

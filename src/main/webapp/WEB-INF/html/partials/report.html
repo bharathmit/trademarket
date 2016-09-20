@@ -1,0 +1,65 @@
+<script>
+  $(function() {
+    $( "#fromdate" ).datepicker({ 
+    	changeMonth: true,
+        changeYear: true,
+    	dateFormat: "dd-mm-yy" 
+    	});
+    $( "#todate" ).datepicker({ 
+    	 changeMonth: true,
+    	 changeYear: true,
+    	dateFormat: "dd-mm-yy"
+    	});
+   
+  });
+  
+ </script>
+
+<div class="page-header">
+	<h3>Report</h3>
+</div>
+
+<form class="form-horizontal">
+			
+			<div class="form-group">
+				<label for="fromdate" class="col-sm-4 control-label">From Date:</label>
+				<div class="col-sm-3">
+					<input id="fromdate" ng-model="report.fromDate" type="text" class="form-control" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="todate" class="col-sm-4 control-label">To Date:</label>
+				<div class="col-sm-3">
+					<input id="todate" ng-model="report.toDate" type="text" class="form-control" />
+				</div>
+			</div>
+			
+			<!-- <div class="form-group">
+				<label for="country" class="col-sm-4 control-label">Country:</label>
+				<div class="col-sm-3">
+					<select name="country" id="country" class="form-control"   ng-model="report.counrtyObject" 
+				         		ng-options="list.clLabel for list in country">
+					      <option value="">--Please Select--</option>					
+				    </select>
+				</div>	
+			</div> -->
+			
+			
+			
+			<div class="form-group">
+				<br>
+				<div class="col-sm-offset-3 col-sm-5">
+					<div class="col-sm-10 col-sm-offset-2">
+						<button type="submit" class="btn btn-primary" ng-click="print(report)"><span class="glyphicon glyphicon-ok"></span> Print</button>
+						<button type="submit" class="btn btn-primary" ng-click="report ='' "><span class="glyphicon glyphicon-ok"></span> Reset</button>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			
+			
+</form>
+

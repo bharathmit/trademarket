@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table.names tr:nth-child(even) {
+    background-color: #f1f1c1;
+}
+table.names tr:nth-child(odd) {
+   background-color:#ffffff;
+}
+table.names th	{
+    background-color: #c1c1c1;
+}
+</style>
+</head>
+
+<body>
+
+
+<table class="names">
+  <tr>
+    <th>S.No</th>
+    <th>Country Name</th>		
+    <th>Total</th>
+  </tr>
+  #set($counter = 1)
+  #foreach( $obj in $body )
+  <tr>
+    <td>$counter</td>
+    <td>$obj.fieldName</td>		
+    <td>$obj.fieldValue</td>
+  </tr>
+   #set($counter = $counter + 1)
+  #end
+ 
+</table>
+
+</body>
+</html>
+
+  
